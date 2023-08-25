@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+
+<DigiClock>
+  <Window name="Main" title="DigiClock">
+    <DigiClock name="Clock" hFlex="TRUE" vFlex="TRUE" quickHelp="\ecDigiClock\n© 1997-2002, Tim Teulings\nwritten using VisualOberon"/>
+  </Window>
+</DigiClock>

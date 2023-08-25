@@ -1,0 +1,28 @@
+#ifndef _MODULE_Strings2_
+#define _MODULE_Strings2_
+
+#include <__typemap.h>
+#include <RT0.oh>
+#include <RT0.oh>
+#include <Object.oh>
+#include <Exception.oh>
+extern void Strings2__AppendChar(OOC_CHAR8 ch, OOC_CHAR8 dst[], OOC_LEN dst_0d);
+extern void Strings2__InsertChar(OOC_CHAR8 ch, OOC_INT16 pos, OOC_CHAR8 dst[], OOC_LEN dst_0d);
+extern OOC_INT16 Strings2__PosChar(OOC_CHAR8 ch, const OOC_CHAR8 str__ref[], OOC_LEN str_0d);
+extern OOC_CHAR8 Strings2__Match(const OOC_CHAR8 pat__ref[], OOC_LEN pat_0d, const OOC_CHAR8 s__ref[], OOC_LEN s_0d);
+extern void OOC_Strings2_init(void);
+extern void OOC_Strings2_open(RT0__Module client);
+extern void OOC_Strings2_destroy(void);
+extern void OOC_Strings2_close(RT0__Module client);
+
+/* run-time meta data */
+extern RT0__StructDesc _td_Strings2__130;
+extern RT0__StructDesc _td_Strings2__443;
+extern RT0__StructDesc _td_Strings2__765;
+extern RT0__StructDesc _td_Strings2__913;
+extern RT0__StructDesc _td_Strings2__1349;
+extern RT0__StructDesc _td_Strings2__1808;
+extern RT0__StructDesc _td_Strings2__1871;
+#endif /* _MODULE_Strings2_ */
+
+/* --- */

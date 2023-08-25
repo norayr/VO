@@ -1,0 +1,59 @@
+#ifndef _MODULE_Locales_
+#define _MODULE_Locales_
+
+#include <__typemap.h>
+#include <RT0.oh>
+#include <Strings.oh>
+#include <RT0.oh>
+#include <Object.oh>
+#include <Exception.oh>
+#define Locales__decimalPoint 0
+#define Locales__thousandsSep 1
+#define Locales__grouping 2
+#define Locales__intCurrencySymbol 3
+#define Locales__currencySymbol 4
+#define Locales__monDecimalPoint 5
+#define Locales__monThousandsSep 6
+#define Locales__monGrouping 7
+#define Locales__positiveSign 8
+#define Locales__negativeSign 9
+#define Locales__intFracDigits 10
+#define Locales__fracDigits 11
+#define Locales__pCSPrecedes 12
+#define Locales__pSepBySpace 13
+#define Locales__nCSPrecedes 14
+#define Locales__nSepBySpace 15
+#define Locales__pSignPosn 16
+#define Locales__nSignPosn 17
+#define Locales__daysOfWeek 18
+#define Locales__months 25
+#define Locales__defTimeFormat 37
+#define Locales__defDateFormat 38
+#define Locales__defBothFormat 39
+#define Locales__startUserID 100
+#define Locales__unspecified 127
+typedef void (*Locales__ErrorProc)(const OOC_CHAR8 selector__ref[], OOC_LEN selector_0d, OOC_CHAR8 descr[], OOC_LEN descr_0d);
+extern OOC_INT32 Locales__ALL;
+extern OOC_INT32 Locales__COLLATE;
+extern OOC_INT32 Locales__CTYPE;
+extern OOC_INT32 Locales__MONETARY;
+extern OOC_INT32 Locales__NUMERIC;
+extern OOC_INT32 Locales__TIME;
+extern Locales__ErrorProc Locales__GetText;
+extern OOC_CHAR8 Locales__GetStr(OOC_INT32 id, OOC_CHAR8 ls[], OOC_LEN ls_0d);
+extern OOC_INT32 Locales__GetInt(OOC_INT32 id);
+extern void Locales__Set(OOC_INT32 category, const OOC_CHAR8 name__ref[], OOC_LEN name_0d, OOC_CHAR8 old[], OOC_LEN old_0d);
+extern void OOC_Locales_init(void);
+extern void OOC_Locales_open(RT0__Module client);
+extern void OOC_Locales_destroy(void);
+extern void OOC_Locales_close(RT0__Module client);
+
+/* run-time meta data */
+extern RT0__StructDesc _td_Locales__2925;
+extern RT0__StructDesc _td_Locales__2951;
+extern RT0__StructDesc _td_Locales__3430;
+extern RT0__StructDesc _td_Locales__3879;
+extern RT0__StructDesc _td_Locales__3903;
+#endif /* _MODULE_Locales_ */
+
+/* --- */

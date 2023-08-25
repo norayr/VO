@@ -1,0 +1,7 @@
+This are some more or less interesting examples of VisualOberon features.
+
+For simplicity most applications assume that they are started from
+the local direcory. If you get error message about not found images or
+*.vgd files, make sure you started them from the demos directory since
+these applications expect their *.vgd file in the directory the
+application is started from.

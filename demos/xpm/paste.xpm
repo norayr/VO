@@ -1,0 +1,27 @@
+/* XPM */
+static char * paste_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"20 18 3 1",
+/* colors */
+" 	s none c none",
+".	s black 	m black	c black",
+"X	s white 	m white	c white",
+/* pixels */
+"                    ",
+"                    ",
+"  ......   ..       ",
+"  .XXXX.  .  . .    ",
+"  .X..X.      ..    ",
+"  .XXXX.     ...    ",
+"  .X..X.            ",
+"  .XXXX.   .......  ",
+"  ......   .XXXXX.  ",
+"           .X...X.  ",
+"           .XXXXX.  ",
+"           .X...X.  ",
+"           .XXXXX.  ",
+"           .X...X.  ",
+"           .XXXXX.  ",
+"           .......  ",
+"                    ",
+"                    "};

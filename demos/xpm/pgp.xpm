@@ -1,0 +1,27 @@
+/* XPM */
+static char * pgp_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"19 18 3 1",
+/* colors */
+" 	s none c none",
+".	s black 	m black	c black",
+"X	s white 	m white	c white",
+/* pixels */
+"                   ",
+"                   ",
+"                   ",
+"                   ",
+"                   ",
+"    ..             ",
+"   XX .            ",
+"  X. X...........  ",
+"  X. XXXXXXXXXXX.  ",
+"  X. XXXXXXXXXXX.  ",
+"  X. X.X    X  X   ",
+"  X. X             ",
+"   XX              ",
+"                   ",
+"                   ",
+"                   ",
+"                   ",
+"                   "};

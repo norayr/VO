@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+
+<HelloWorld>
+  <Window name="Main" title="HelloWorld">
+    <WindowGroup>
+      <Main>
+        <Text text="\es\ei\e9Hello world!"/>
+      </Main>
+    </WindowGroup>
+  </Window>
+</HelloWorld>

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+
+<VGDTest>
+  <Window name="Main" title="DigiClock">
+    <WindowGroup quickHelp="\ecVGDTest\n© 2002, Tim Teulings\nwritten using VisualOberon">
+      <Main>
+        <Button name="Button" hFlex="TRUE" vFlex="TRUE" labelText="_Press me!*"/>
+      </Main>
+    </WindowGroup>
+  </Window>
+</VGDTest>

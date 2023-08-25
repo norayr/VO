@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+
+<TestTree>
+  <Window name="Main" title="TestTree">
+    <View>
+      <Tree name="Tree" hFlex="TRUE" vFlex="TRUE" focus="TRUE">
+        <width mode="unit" value="50" />
+        <height mode="unit" value="100" />
+      </Tree>
+    </View>
+  </Window>
+</TestTree>

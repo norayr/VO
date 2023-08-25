@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+
+<ViewOneOfNTest>
+  <Window name="Main" title="ViewOneOfNTest">
+    <WindowGroup>
+      <Main>
+        <ViewOneOfN hFlex="TRUE" vFlex="TRUE" focus="TRUE">
+          <View text="Entry1">
+            <Text text="Hallo!"/>
+          </View>
+
+          <View text="Entry2">
+            <ViewOneOfN hFlex="TRUE" vFlex="TRUE" focus="TRUE">
+              <View text="Entry21">
+
+                <ViewOneOfN hFlex="TRUE" vFlex="TRUE" focus="TRUE">
+                  <View text="Entry211">
+                    <Text text="Hallo!"/>
+                  </View>
+
+                  <View text="Entry212">
+                    <Text text="Hallo!"/>
+                  </View>
+
+                  <View text="Entry213">
+                    <Text text="Hallo!"/>
+                  </View>
+
+                  <View text="Entry214">
+                    <Text text="Hallo!"/>
+                  </View>
+
+                  <View text="Entry215">
+                    <Text text="Hallo!"/>
+                  </View>
+
+                  <View text="Entry216">
+                    <Text text="Hallo!"/>
+                  </View>
+                </ViewOneOfN>
+
+              </View>
+
+              <View text="Entry22">
+                <Text text="Hallo!"/>
+              </View>
+
+              <View text="Entry23">
+                <Text text="Hallo!"/>
+              </View>
+            </ViewOneOfN>
+          </View>
+
+          <View text="Entry3">
+            <ViewOneOfN hFlex="TRUE" vFlex="TRUE" focus="TRUE">
+              <View text="Entry31">
+                <Text text="Hallo!"/>
+              </View>
+
+              <View text="Entry32">
+                <Text text="Hallo!"/>
+              </View>
+
+              <View text="Entry33">
+                <Text text="Hallo!"/>
+              </View>
+
+              <View text="Entry34">
+                <Text text="Hallo!"/>
+              </View>
+
+              <View text="Entry35">
+                <Text text="Hallo!"/>
+              </View>
+
+              <View text="Entry36">
+                <Text text="Hallo!"/>
+              </View>
+            </ViewOneOfN>
+          </View>
+
+          <View text="Entry4">
+            <ViewOneOfN hFlex="TRUE" vFlex="TRUE" focus="TRUE">
+              <View text="Entry41">
+                <Text text="Hallo!"/>
+              </View>
+
+              <View text="Entry42">
+                <Text text="Hallo!"/>
+              </View>
+
+              <View text="Entry43">
+                <Text text="Hallo!"/>
+              </View>
+
+              <View text="Entry44">
+                <Text text="Hallo!"/>
+              </View>
+
+              <View text="Entry45">
+                <Text text="Hallo!"/>
+              </View>
+
+              <View text="Entry46">
+                <Text text="Hallo!"/>
+              </View>
+
+              <View text="Entry47">
+                <Text text="Hallo!"/>
+              </View>
+
+              <View text="Entry48">
+                <Text text="Hallo!"/>
+              </View>
+
+              <View text="Entry49">
+                <Text text="Hallo!"/>
+              </View>
+            </ViewOneOfN>
+          </View>
+
+          <View text="Entry5">
+            <ViewOneOfN hFlex="TRUE" vFlex="TRUE" focus="TRUE">
+              <View text="Entry51">
+                <Text text="Hallo!"/>
+              </View>
+
+              <View text="Entry52">
+                <Text text="Hallo!"/>
+              </View>
+
+              <View text="Entry53">
+                <Text text="Hallo!"/>
+              </View>
+            </ViewOneOfN>
+          </View>
+
+        </ViewOneOfN>
+      </Main>
+    </WindowGroup>
+  </Window>
+</ViewOneOfNTest>

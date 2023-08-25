@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+
+<StringTest>
+  <Window name="Main" title="StringTest">
+    <WindowGroup hFlex="TRUE">
+      <Main>
+        <Panel name="Panel" direction="vertical" hFlex="TRUE">
+          <width mode="unit" value="50" />
+          <Text text="This example shows the various features of the string control." />
+          <Space direction="vertical" />
+          <String name="String1" hFlex="TRUE" focus="TRUE"/>
+          <Space direction="vertical" />
+          <String name="String2" hFlex="TRUE" focus="TRUE"/>
+          <Space direction="vertical" />
+          <String name="String3" hFlex="TRUE" focus="TRUE"/>
+          <Space direction="vertical" />
+          <ButtonRow hFlex="TRUE">
+            <Button name="Close" labelText="_Close#" />
+          </ButtonRow>
+        </Panel>
+      </Main>
+    </WindowGroup>
+  </Window>
+</StringTest>

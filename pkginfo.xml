@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<package name="VisualOberon">
+  <version current="0" revision="0" age="0"/>
+
+  <pragmas>
+    <define name="HAVE_LIB_PNG" type="boolean">TRUE</define>
+    <define name="HAVE_LIB_JPEG" type="boolean">TRUE</define>
+    <define name="HAVE_LIB_TIFF" type="boolean">TRUE</define>
+    <define name="HAVE_LIB_GIF" type="boolean">TRUE</define>
+
+    <define name="HAVE_PACKAGE_X11" type="boolean">FALSE</define>
+    <define name="HAVE_PACKAGE_CURSES" type="boolean">FALSE</define>
+    <define name="HAVE_PACKAGE_CARBON" type="boolean">FALSE</define>
+    <define name="HAVE_PACKAGE_WINDOWS" type="boolean">FALSE</define>
+  </pragmas>
+
+  <library name="oo2c_vo" main-module="VisualOberonLib">
+    <version current="0" revision="0" age="0"/>
+  </library>
+</package>

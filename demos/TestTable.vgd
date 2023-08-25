@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+
+<TestTable>
+  <Window name="Main" title="TestTable">
+    <WindowGroup hFlex="TRUE" vFlex="TRUE">
+      <Main>
+        <Tab name="Tab" hFlex="TRUE" vFlex="TRUE" focus="TRUE">
+          <TextRider text="Cell selection">
+             <Table name="Table1" hFlex="TRUE" vFlex="TRUE" focus="TRUE">
+               <width mode="unit" value="50" />
+               <height mode="unit" value="50" />
+             </Table>
+          </TextRider>
+
+          <TextRider text="Header">
+             <Table name="Table2" hFlex="TRUE" vFlex="TRUE" focus="TRUE">
+               <width mode="unit" value="50" />
+               <height mode="unit" value="50" />
+             </Table>
+          </TextRider>
+
+          <TextRider text="Classic">
+             <Panel hFlex="TRUE" vFlex="TRUE" direction="horizontal">
+               <Table name="Table3" hFlex="TRUE" vFlex="TRUE" focus="TRUE"/>
+                 <width mode="unit" value="50" />
+                 <height mode="unit" value="50" />
+
+                <Space direction="horizontal" />
+
+                <Panel vFlex="TRUE" direction="vertical">
+                  <Button name="Insert" hFlex="TRUE" labelText="_Append" focus="TRUE"/>
+                  <Space direction="horizontal" />
+                  <Button name="Delete" hFlex="TRUE" labelText="_Delete" focus="TRUE"/>
+                </Panel>
+              </Panel>
+          </TextRider>
+
+          <TextRider text="Objects">
+             <Table name="Table4" hFlex="TRUE" vFlex="TRUE" focus="TRUE">
+               <width mode="unit" value="50" />
+               <height mode="unit" value="50" />
+             </Table>
+          </TextRider>
+
+        </Tab>
+      </Main>
+    </WindowGroup>
+  </Window>
+</TestTable>

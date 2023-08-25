@@ -1,0 +1,72 @@
+#ifndef _MODULE_Calendar_
+#define _MODULE_Calendar_
+
+#include <__typemap.h>
+#include <RT0.oh>
+#include <Time.oh>
+#include <SysClock.oh>
+#include <RT0.oh>
+#include <Object.oh>
+#include <Exception.oh>
+#define Calendar__sunday 0
+#define Calendar__monday 1
+#define Calendar__tuesday 2
+#define Calendar__wednesday 3
+#define Calendar__thursday 4
+#define Calendar__friday 5
+#define Calendar__saturday 6
+#define Calendar__january 1
+#define Calendar__february 2
+#define Calendar__march 3
+#define Calendar__april 4
+#define Calendar__may 5
+#define Calendar__june 6
+#define Calendar__july 7
+#define Calendar__august 8
+#define Calendar__september 9
+#define Calendar__october 10
+#define Calendar__november 11
+#define Calendar__december 12
+extern void Calendar__SetLocalTime(struct SysClock__DateTime *c, RT0__Struct c__tag, OOC_INT8 d, OOC_INT8 m, OOC_INT16 y, OOC_INT8 h, OOC_INT8 min, OOC_INT8 s);
+extern void Calendar__SetUTC(struct SysClock__DateTime *c, RT0__Struct c__tag, OOC_INT8 d, OOC_INT8 m, OOC_INT16 y, OOC_INT8 h, OOC_INT8 min, OOC_INT8 s);
+extern void Calendar__GetTimeStamp(struct SysClock__DateTime *c, RT0__Struct c__tag, const struct Time__TimeStamp *s__ref);
+extern void Calendar__SetTimeStamp(const struct SysClock__DateTime *c__ref, struct Time__TimeStamp *t, RT0__Struct t__tag);
+extern OOC_INT8 Calendar__DayOfWeek(const struct SysClock__DateTime *c__ref);
+extern OOC_CHAR8 Calendar__IsLeapYear(const struct SysClock__DateTime *c__ref);
+extern OOC_INT8 Calendar__DaysPerMonth(const struct SysClock__DateTime *c__ref);
+extern OOC_INT16 Calendar__WeekNumber(const struct SysClock__DateTime *c__ref, OOC_INT8 startday);
+extern OOC_INT16 Calendar__DayOfYear(const struct SysClock__DateTime *c__ref);
+extern void Calendar__TimeToStr(struct SysClock__DateTime *c, RT0__Struct c__tag, const OOC_CHAR8 pattern__ref[], OOC_LEN pattern_0d, OOC_CHAR8 dateStr[], OOC_LEN dateStr_0d);
+extern OOC_CHAR8 Calendar__StrToTime(struct SysClock__DateTime *c, RT0__Struct c__tag, const OOC_CHAR8 dateStr__ref[], OOC_LEN dateStr_0d, const OOC_CHAR8 pattern__ref[], OOC_LEN pattern_0d);
+extern void OOC_Calendar_init(void);
+extern void OOC_Calendar_open(RT0__Module client);
+extern void OOC_Calendar_destroy(void);
+extern void OOC_Calendar_close(RT0__Module client);
+
+/* run-time meta data */
+extern RT0__StructDesc _td_Calendar__10541;
+extern RT0__StructDesc _td_Calendar__10671;
+extern RT0__StructDesc _td_Calendar__10956;
+extern RT0__StructDesc _td_Calendar__11121;
+extern RT0__StructDesc _td_Calendar__11464;
+extern RT0__StructDesc _td_Calendar__11711;
+extern RT0__StructDesc _td_Calendar__11756;
+extern RT0__StructDesc _td_Calendar__11747;
+extern RT0__StructDesc _td_Calendar__12437;
+extern RT0__StructDesc _td_Calendar__12727;
+extern RT0__StructDesc _td_Calendar__12776;
+extern RT0__StructDesc _td_Calendar__13387;
+extern RT0__StructDesc _td_Calendar__13438;
+extern RT0__StructDesc _td_Calendar__16130;
+extern RT0__StructDesc _td_Calendar__16220;
+extern RT0__StructDesc _td_Calendar__16422;
+extern RT0__StructDesc _td_Calendar__18767;
+extern RT0__StructDesc _td_Calendar__18814;
+extern RT0__StructDesc _td_Calendar__StrToTime_ShortString;
+extern RT0__StructDesc _td_Calendar__19780;
+extern RT0__StructDesc _td_Calendar__19914;
+extern RT0__StructDesc _td_Calendar__19947;
+extern RT0__StructDesc _td_Calendar__22925;
+#endif /* _MODULE_Calendar_ */
+
+/* --- */

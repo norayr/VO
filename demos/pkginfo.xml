@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<package name="VisualOberonDemos">
+  <version current="0" revision="0" age="0"/>
+
+  <executable main-module="Apple" />
+  <executable main-module="Button"/>
+  <executable main-module="CharacterTable"/>
+  <executable main-module="ClipTest"/>
+  <executable main-module="Clock"/>
+  <executable main-module="ComboTest"/>
+  <executable main-module="DateTest"/>
+  <executable main-module="DigiClock"/>
+  <executable main-module="DirTest"/>
+  <executable main-module="DiskSize"/>
+  <executable main-module="DisplayInfo"/>
+  <!--<executable main-module="Doom"/> -->
+  <executable main-module="DrawTest"/>
+  <executable main-module="EventPit"/>
+  <executable main-module="Fire"/>
+  <executable main-module="FontList"/>
+  <executable main-module="FontTest"/>
+  <executable main-module="FormDemo1"/>
+  <executable main-module="GameArea"/>
+  <executable main-module="GridTest"/>
+  <executable main-module="HeaderTest"/>
+  <executable main-module="HelloWorld"/>
+  <executable main-module="HelloWholeWorld"/>
+  <executable main-module="Image"/>
+  <executable main-module="LabelTest"/>
+  <executable main-module="MenuTest"/>
+  <!--<executable main-module="PlotTest"/>  LowLReal is not in OOC2 -->
+  <executable main-module="SaveImage"/>
+  <executable main-module="StringTest"/>
+  <executable main-module="TestTable"/>
+  <executable main-module="TestTree"/>
+  <executable main-module="TextTest"/>
+  <executable main-module="TextView"/>
+  <executable main-module="VisualShow"/>
+  <executable main-module="ViewOneOfNTest"/>
+  <executable main-module="VOOOCP"/>
+  <executable main-module="WRITE"/>
+  <executable main-module="XTest"/>
+</package>

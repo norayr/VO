@@ -1,0 +1,40 @@
+OOC=/usr/local/oo2c/bin/oo2c
+OFLAGS=
+
+PKG=VisualOberon
+LIB=liboo2c_vo
+PKG_COMPAT=oocv1-compat
+PKG_DEMOS=VisualOberonDemos
+PKG_TOOLS=VisualOberonTools
+MY_OFLAGS=$(OFLAGS) -r oocv1-compat -r .
+
+all: obj/$(LIB).la demos/bin/XTest tools/bin/VisualPrefs
+
+configure: configure.ac
+	autoconf
+
+
+obj/$(LIB).la:
+	$(OOC) $(MY_OFLAGS) --build-package $(PKG_COMPAT) $(PKG)
+
+demos/bin/XTest: obj/$(LIB).la
+	$(OOC) $(MY_OFLAGS) -r demos --build-package $(PKG_DEMOS)
+
+tools/bin/VisualPrefs: obj/$(LIB).la
+	$(OOC) $(MY_OFLAGS) -r tools --build-package $(PKG_TOOLS)
+
+install: obj/$(LIB).la tools/bin/VisualPrefs
+	$(OOC) $(MY_OFLAGS) --install-package -r tools $(PKG_COMPAT) $(PKG) $(PKG_TOOLS)
+
+install-demos: demos/bin/XTest
+	$(OOC) $(MY_OFLAGS) -r demos --install-package $(PKG_DEMOS)
+
+uninstall:
+	$(OOC) $(OFLAGS) --uninstall-package $(PKG_TOOLS) $(PKG_DEMOS) $(PKG) $(PKG_COMPAT)
+
+clean:
+	for i in . tools demos oocv1-compat; do rm -Rf $$i/sym $$i/obj $$i/bin $$i/oocdoc; done
+
+distclean: clean
+	rm -f Makefile pkginfo.xml config.log config.status
+	rm -Rf autom4te.cache

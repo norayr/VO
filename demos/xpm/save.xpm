@@ -1,0 +1,28 @@
+/* XPM */
+static char * save_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"20 18 4 1",
+/* colors */
+" 	s none c none",
+".	s shine 	m white	c white",
+"X	s shadow	m black	c black",
+"-      s white		m white c white",
+/* pixels */
+"                    ",
+"                    ",
+"  ...............X  ",
+"  .              X  ",
+"  .  ----------  X  ",
+"  .  ----------  X  ",
+"  .  ----------  X  ",
+"  .  ----------  X  ",
+"  .  ----------  X  ",
+"  .  ----------  X  ",
+"  .              X  ",
+"  .              X  ",
+"  .   .......X   X  ",
+"  .   .      X   X  ",
+"  .   .      X   X  ",
+"  .XXXXXXXXXXXXXXX  ",
+"                    ",
+"                    "};

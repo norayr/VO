@@ -1,0 +1,23 @@
+This are some (small) tools that ease the use of VisualOberon.
+
+VisualPrefs
+===========
+
+Show the current visualisation preferences and allows you to change them,
+apply them for testing and store them.
+
+VGDDoc
+======
+
+This tool lists all attributes an object supports in VGD.
+
+
+VGDView
+=======
+
+Using this tool you can preview any VisualOberon GUI description file
+(*.vgd). You can easyly test any changes to the GUI of a program
+without recompilitaion of that program, without clicking through
+menues and dialogs. You can check any effect on layout, windowing size
+modification etc., too.
+

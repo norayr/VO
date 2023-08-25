@@ -1,0 +1,229 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+
+<XTest>
+  <Menu name="File">
+    <Item label="_New" />
+    <Item label="_Open..." shortcut="C+o" />
+    <Item label="_Save" shortcut="C+s" />
+    <Separator />
+    <Item label="_Quit" shortcut="C+q" id="100"/>
+  </Menu>
+
+  <Menu name="Edit">
+    <Item label="_Cut" shortcut="C+x" />
+    <Item label="C_opy" shortcut="C+c" />
+    <Item label="_Paste" shortcut="C+p" />
+  </Menu>
+
+  <Menu name="Search">
+    <Item label="_Find" shortcut="C+f" />
+    <Item label="F_ind next" shortcut="C+n" />
+    <Separator />
+    <Item label="_Replace" shortcut="C+r" />
+    <Separator />
+    <Item label="_Goto" shortcut="C+g" />
+  </Menu>
+
+  <Menu name="Sub">
+    <Item label="_Menu with subitems" />
+    <Sub label="_Sub">
+      <Item label="S_ubSub1" />
+      <Sub label="_SubSub2">
+        <Item label="_SubSubSub" />
+      </Sub>
+    </Sub>
+      <Item label="_Normal item" />
+  </Menu>
+
+  <Menu name="Extra">
+    <Item label="_Dump object tree" />
+  </Menu>
+
+  <Menu name="Help">
+    <Item label="_Help on item" />
+    <Item label="_Tutorial" />
+    <Separator />
+    <Item label="_Settings..." shortcut="C+!" id="101"/>
+    <Separator />
+    <Item label="_About..." shortcut="C+F1" id="103"/>
+  </Menu>
+
+  <Window name="Main" title="XTest">
+     <WindowGroup name="WindowGroup" hFlex="TRUE" vFlex="TRUE>">
+
+       <Menu>
+         <MenuStrip name="MenuStrip">
+            <TextEntry label="_File"   menu="File" />
+            <TextEntry label="_Edit"   menu="Edit" />
+            <TextEntry label="_Search" menu="Search" />
+            <TextEntry label="S_ub"    menu="Sub" />
+            <TextEntry label="E_xtra"  menu="Extra" />
+            <TextEntry label="_Help"   menu="Help" />
+         </MenuStrip>
+       </Menu>
+
+       <Toolbar>
+         <Toolbar name="Toolbar" hFlex="TRUE">
+           <Button name="New" hFlex="TRUE" type="toolbar">
+             <Image filename="images/new.png" />
+           </Button>
+           <Button name="Open" hFlex="TRUE" type="toolbar">
+             <Image filename="images/open.png" />
+           </Button>
+           <Button name="Save" hFlex="TRUE" type="toolbar">
+             <Image filename="images/save.png" />
+           </Button>
+           <Button name="Help" hFlex="TRUE" type="toolbar">
+             <Image filename="images/help.png" />
+           </Button>
+         </Toolbar>
+       </Toolbar>
+
+       <Main>
+         <ViewOneOfN name="Tab" hFlex="TRUE" vFlex="TRUE" focus="TRUE" quickHelp="A quickhelp for the 'ViewOneOfN' gadget">
+           <View text="Welcome">
+              <LightChain name="LightChain" hFlex="TRUE" text="Welcome to VisualOberon!"/>
+           </View>
+
+           <View text="Text">
+              <FrameGroup hFlex="TRUE" vFlex="TRUE" text="Text...">
+                <Text hFlex="TRUE" vFlex="TRUE" text="This is a\n\eamultiline\en text!\nCreated using the \ebVOText-class\en!\n\erRight alligned\n\ec\eucentered...\en\n...over two lines\n\elSpalte 1 \tSpalte 2 \tSpalte 3\neins \tzwei \tdrei\n\n\en\ew\euThis is a text in warning color!\en\n\nWe also support different fonts:\nThis f.e. is written with a \effixed font\ep!" />
+              </FrameGroup>
+           </View>
+
+           <View text="B&amp;R">
+              <Panel hFlex="TRUE" direction="horizontal">
+                 <Space hFlex="TRUE" direction="horizontal" />
+
+                 <Label>
+                    <TextEntry text="Checkbox">
+                       <Bool name="CB1" focus="TRUE"/>
+                    </TextEntry>
+                    <TextEntry text="Checkbox">
+                       <Bool name="CB2" focus="TRUE"/>
+                    </TextEntry>
+                    <TextEntry text="Checkbox">
+                       <Bool name="CB3" focus="TRUE"/>
+                    </TextEntry>
+                    <TextEntry text="Checkbox">
+                       <Bool name="CB4" focus="TRUE"/>
+                    </TextEntry>
+                    <TextEntry text="Checkbox">
+                       <Bool name="CB5" focus="TRUE"/>
+                    </TextEntry>
+                    <TextEntry text="Power LED">
+                       <LED name="LED" focus="FALSE"/>
+                    </TextEntry>
+                 </Label>
+
+                 <Space hFlex="TRUE" direction="horizontal" />
+
+                 <Label>
+                    <TextEntry text="Radiobutton">
+                       <Radio name="RB1" focus="TRUE"/>
+                    </TextEntry>
+                    <TextEntry text="Radiobutton">
+                       <Radio name="RB2" focus="TRUE"/>
+                    </TextEntry>
+                    <TextEntry text="Radiobutton">
+                       <Radio name="RB3" focus="TRUE"/>
+                    </TextEntry>
+                    <TextEntry text="Radiobutton">
+                       <Radio name="RB4" focus="TRUE"/>
+                    </TextEntry>
+                    <TextEntry text="Radiobutton">
+                       <Radio name="RB5" focus="TRUE"/>
+                    </TextEntry>
+                  </Label>
+
+                 <Space hFlex="TRUE" direction="horizontal" />
+              </Panel>
+           </View>
+
+           <View text="Other">
+             <Panel hFlex="TRUE" vFlex="TRUE" direction="vertical">
+               <Slider name="Slider" hFlex="TRUE" direction="horizontal" scale="TRUE" focus="TRUE"/>
+
+               <Space direction="vertical"/>
+
+               <Button name="Popup"
+                       labelText="_Press me for \espopup\en!#"
+                       quickHelp="Press this button\nto get a little\npopup-menu!"
+                       focus="TRUE"/>
+
+               <Space direction="vertical"/>
+
+               <Button name="Disabled"
+                       labelText="I'm disabled!"
+                       quickHelp="This one is disabled!"
+                       focus="TRUE"/>
+
+               <Space direction="vertical"/>
+
+               <TextCombo name="Combo" quickHelp="This is a combo gadget." focus="TRUE">
+                 <width mode="unit" value="20" />
+               </TextCombo>
+
+               <Space direction="vertical"/>
+
+               <Oszil name="Oszil" hFlex="TRUE" vFlex="TRUE">
+                 <height mode="unit" value="6" />
+               </Oszil>
+
+               <Space direction="vertical"/>
+
+               <FuelGauge name="Fuel" hFlex="TRUE" direction="horizontal" />
+
+               <Space direction="vertical"/>
+
+               <String name="String1" hFlex="TRUE" quickHelp="A simple string gadget!" focus="TRUE"/>
+
+               <Space direction="vertical"/>
+
+               <String name="String2" hFlex="TRUE" quickHelp="A simple string gadget!" focus="TRUE"/>
+             </Panel>
+
+           </View>
+
+           <View text="Table">
+             <Table name="Table1" hFlex="TRUE" vFlex="TRUE" quickHelp="VisualOberon also supports\na table gadget!" focus="TRUE"/>
+           </View>
+
+           <View text="Image">
+             <Table name="Table2" hFlex="TRUE" vFlex="TRUE" quickHelp="VisualOberon also supports\na table gadget!" focus="TRUE"/>
+           </View>
+
+           <View text="Clock">
+             <Clock name="Clock" hFlex="TRUE" vFlex="TRUE" quickHelp="What's the time?"/>
+           </View>
+
+           <View text="Pane">
+             <Pane hFlex="TRUE" vFlex="TRUE" direction="vertical">
+               <Pane hFlex="TRUE" vFlex="TRUE" direction="horizontal">
+                 <WireFrame name="WireFrame" hFlex="TRUE" vFlex="TRUE">
+                   <width mode="unit" value="15" />
+                   <height mode="unit" value="15" />
+                 </WireFrame>
+                 <ColorArea name="Color1" hFlex="TRUE" vFlex="TRUE" />
+               </Pane>
+               <Pane hFlex="TRUE" vFlex="TRUE" direction="horizontal">
+                 <ColorArea name="Color2" hFlex="TRUE" vFlex="TRUE">
+                   <width mode="unit" value="30" />
+                   <height mode="unit" value="15" />
+                 </ColorArea>
+                 <Power hFlex="TRUE" vFlex="TRUE"/>
+               </Pane>
+             </Pane>
+           </View>
+         </ViewOneOfN>
+       </Main>
+
+       <StatusLine>
+         <StatusLine hFlex="TRUE">
+           <Text name="Status" hFlex="TRUE" text="OK."/>
+           <StringClock />
+         </StatusLine>
+       </StatusLine>
+     </WindowGroup>
+  </Window>
+</XTest>

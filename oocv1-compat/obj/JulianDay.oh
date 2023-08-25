@@ -1,0 +1,27 @@
+#ifndef _MODULE_JulianDay_
+#define _MODULE_JulianDay_
+
+#include <__typemap.h>
+#include <RT0.oh>
+#include <RT0.oh>
+#include <Object.oh>
+#include <Exception.oh>
+#define JulianDay__startMJD 2.4000005000000000E+6
+#define JulianDay__startTJD 2.4400005000000000E+6
+extern OOC_CHAR8 JulianDay__UseGregorian;
+extern OOC_REAL64 JulianDay__DateToJD(OOC_INT8 day, OOC_INT8 month, OOC_INT16 year);
+extern OOC_INT32 JulianDay__DateToDays(OOC_INT8 day, OOC_INT8 month, OOC_INT16 year);
+extern OOC_INT32 JulianDay__DateToTJD(OOC_INT8 day, OOC_INT8 month, OOC_INT16 year);
+extern void JulianDay__JDToDate(OOC_REAL64 jd, OOC_INT8 *day, OOC_INT8 *month, OOC_INT16 *year);
+extern void JulianDay__DaysToDate(OOC_INT32 jd, OOC_INT8 *day, OOC_INT8 *month, OOC_INT16 *year);
+extern void JulianDay__TJDToDate(OOC_INT32 jd, OOC_INT8 *day, OOC_INT8 *month, OOC_INT16 *year);
+extern void JulianDay__SetGregorianStart(OOC_INT8 day, OOC_INT8 month, OOC_INT16 year);
+extern void OOC_JulianDay_init(void);
+extern void OOC_JulianDay_open(RT0__Module client);
+extern void OOC_JulianDay_destroy(void);
+extern void OOC_JulianDay_close(RT0__Module client);
+
+/* run-time meta data */
+#endif /* _MODULE_JulianDay_ */
+
+/* --- */

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+
+<ComboTest>
+  <Window name="Main" title="ComboTest">
+    <WindowGroup hFlex="TRUE">
+      <Main>
+        <Panel name="Panel" direction="vertical" hFlex="TRUE">
+          <width mode="unit" value="30" />
+          <StringCombo name="StringCombo" hFlex="TRUE" focus="TRUE" />
+          <Space direction="vertical" />
+          <TextCombo name="TextCombo" hFlex="TRUE" focus="TRUE" />
+        </Panel>
+      </Main>
+    </WindowGroup>
+
+  </Window>
+</ComboTest>

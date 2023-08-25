@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<package name="oocv1-compat">
+  <version current="0" revision="0" age="0"/>
+  
+  <library name="oo2c_compat1" main-module="LibOOCv1Compat">
+    <version current="0" revision="0" age="0"/>
+  </library>
+</package>

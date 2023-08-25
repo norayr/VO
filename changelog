@@ -1,0 +1,576 @@
+2003/05/02
+  * VO:Base:Display.Window.Open now returns a BOOLEAN signaling
+     success.
+
+2003/04/25
+  * Fixed bug in VO:Combo not correctly handling empty table model.
+  * Fixed bug when reassigning a new window to a control.
+
+2003/04/21
+  * Moved handling of text drawing type "underlined" from VO:Text
+    into DrawInfo class.
+
+2003/04/18
+  * Added some new preferencences setttings for textual displays.
+  * Improved the CharacterTable demo a little bit.
+    * Add focus chain.
+    * Ommit some non-drawable characters.
+
+2003/04/16
+  * Started adding a curses implementation.
+
+2003/04/13
+  * Moved OS dependend code from VO:Image:Image to VO:OS:X11:Image.
+  * Cleanup Window specific code
+    * Added suffix "On" to some VO:Base:Display.Window callback methods.
+    * Moved VO:Base:Display.Display.currentWin to VO:OS:X11:Display.
+  * Removed a number a warnings.
+  * Fixed a number of potential initialisation problems signaled by
+    oo2c 2.0.7.
+  * Separated VO:Base:Window into a interface and an implementation class.
+    This way VO:Window & Co do not directly depend on X11 anymore.
+
+2003/04/09
+  * Added new attributes to VO:Base:Display.Display
+    * displayType
+    * displaySize
+    * driverName
+  * Changed preferences file name from VisualOberon.res to
+    VisualOberon-<driverName>.res. For the X11 module this is
+    VisualOberon-X11.res. Please rename your local preferences file.
+
+2003/04/06
+  * Moved X11 modules into X11 namespace.
+  * Moved X11 specific lowlevel module for VO into VO:OS:X11 namespace.
+  * Added simple support for second background color for tables. Currently
+    not configurable.
+  * Added reload button to file selection dialog.
+
+2003/03/30
+  * Fixed handling of double and tripple clicks
+
+2003/03/29
+  * Added support for tif.
+  * Added support for the XRENDER extension in VO:Image:Image.
+    Render extension will be used for drawing images with
+    alpha channels if available. That now enables you to correctly
+    draw images that realize shadows and similar using an structured
+    alpha channel.
+
+2003/03/26
+  * Added support for gif to image loading engine (no interlace yet).
+  * Fixed some more bugs in VO:Image and VO:Base:Background.
+
+2003/03/16
+  * Added methods VO:Base:Display.Window.Enable and Disable.
+  * Fix some bugs in VO:Image and VO:Image:Image when drawing
+    images which have an alpha channel.
+
+--- new release 030316
+
+2003/03/16
+  * Some changes in the default configuration to make initial look
+    better.
+  * Changed mode settings of VO:ViewOneOfN.
+
+2003/03/10
+  * You can now define submenues using *.vgd.
+  * VO:Menu:SubMenu did not use DrawSelection. Changed.
+
+2003/03/09
+  * First version of our own image loading library under VO:Image.
+    Set VO_USE_IMAGE in pkginfo.xml to TRUE to activate it. Using
+    this new infrastructure I'm trying to get rid of imlib and to
+    get more OS independent.
+  * Prefs: Loading and storing now produces indetical files.
+    Fonts do not get magically enlarged anymore.
+  * Fixed a bug in VO:OS:Display. Thanks to Marco Oetken!
+  * Enhanced VO:Model:Table and VO:TableView to support STRINGs, too.
+  * VO:Model:Value now internally uses STRING and UCS4CHAR for storing
+    textual values. Note that it does not convert values of type
+    String32 to integer values (can be easily changed).
+  * VO:String now directly works on STRING at some places. Rest will
+    follow.
+  * VGD: Parser name is now of type STRING.
+  * Added support for STRING to VO:Combo.
+  * ViewOneOfN now works on STRINGs as label.
+
+2003/03/02
+  * Made VO:Toolbar.Toolbar.equalSize a preference setting.
+  * VO:Dlg:File now uses a toolbar for the navigation buttons.
+  * Reactivated D&D for VO:String and VO:Text.
+  * Changed D&D string datatype to STRING, however D&D dows only handle
+    String8 now correctly (improvement possible).
+  * Change setter and getter for application name and window title
+    to STRING.
+  * Added hack for setting window title where title#String8.
+  * Note that all string from VGD are of type String32! Such strings
+    cannot be dropped currently.
+
+2003/03/01
+  * Introduced VO:Menu:MenuBox as top level layouting object for pulldown
+    menues. That now makes the preferences code work correctly so we
+    can assign f.e. background to pulldown menues.
+  * various changes to background handling.
+    * Now backgroundObject=NIL means inherit.
+    * As a result InheritBackgroundObject is gone.
+    * New background object for selection as part of VO:Object.Object.
+    * As a result several local apearances of selection background objects
+      have been removed.
+    * VO:Object.Object.CopyBackground has been removed.
+  * VO:Combo now assigns a VO:WindowGroup.WindowGroup to the popup.
+
+2003/02/27
+  * Added STRING methods to VO:Label, VO:Tab, VO:Dlg:Msg, VO:FrameGroup.
+  * VGD now using VO:Prefs:Parser.ValueItem.string for comparisons
+    and for assigning string values where the object allows it.
+    It is now possible to address the full unicode range using VGD.
+    Have seen my first chinese letters on a button :-)
+
+2003/02/26
+  * VO:Button
+     * now internally works on STRING.
+     * Removed functionality to escape control sequences using "\".
+     * SetText now works on STRING.
+
+2003/02/17
+  * Improved file selection dialog.
+    * Now we have simple navigation buttons.
+    * We have shortcuts for
+      * Goto parent directory: Backspace
+      * Goto home directory: A+home
+      * Goto root directory: A+/
+    * File are now selected by double click or by pressing Return.
+
+2003/02/16
+  * Two phase text conversion using VO:Util:EscapeString and similar is
+    gone. Now VO:Text.Text will do it all itself. Note, that now
+    escape sequences always take place!
+  * Rewrote VO:Dlg:About.
+    * Now uses struct for information to make it easily extensible.
+    * Uses STRING.
+  * Implemented VO:Object.Object.SetMaxWidth and SetMaxHeight.
+
+2003/02/15
+  * Added methods KeyToKeyDescription and KeyDescriptionToKey to
+    VO:Base:Display.Display.
+  * Removed shortcut parameter from VO:Menu.Menu.AddTextItemSC. Now
+    internaly VO:Base:Display.Display.KeyToKeyDescription is used.
+    To adapt your code just drop the textual shortcode description from
+    your calls to this method.
+  * Removed window parameter from VO:Menu.Menu.AddTextItemSC. Registering
+    of shortcuts to the parent window is now done more implicit.
+    To adapt your code just drop the window parameter from your
+    calls to this method.
+  * Added VO:VGD:Menu and VO:VGD:MenuStrip. Now you can define textual
+    menues using VGD. Support for submenues will follow.
+  * Remove persistance code form VO:Base:Object.
+  * Make VO:Base:OBject.Object inherit deom OBject.Object, the oo2c
+    standard library baseclass.
+  * New method VO:Utal.Base.EscapeStr.
+
+2003/02/14
+  * Fixed bug in window closing code. When closing windows events
+    for the parent window (especially expose events) could be
+    lost.
+  * Fixed menu handling bugs with sub menues. Simplified menu code.
+  * Added new demo MenuTest.
+
+2003/02/13
+  * Renamed VO:Base:Adjustment to VO:Model:Adjustment.
+
+2003/02/12
+  * A number of optimisations to the VO:Menu code.
+    * Important!
+      Menues connected to a MenuStrip now send the SelectionMsg
+      via the MenuStrip and not the topmost window. So please change
+      your code to do AddHandler or Forward for message catching fromt he
+      menu to the menustrip.
+
+      For menues not connected to a strip (popup menues) everything still
+      is the same :-)
+  * Removed the SetInputFocus call in VO:OS:Display.Window.GrabOn.
+    It is unecessary and avoids focus changed for popup windows.
+
+2003/02/11
+  * Adapted to oo2c 2.0.5.
+  * Changed API of VO:Base:Display.Display.AddChannel and Co.
+  * Fixed bug in VO:Text. Fontchanges were reseted on style changes.
+
+2003/02/02
+  * Add method free to VO:Base:Display.Font.
+  * VO:String now vertically centers the text.
+  * Added a first version of a font selection dialog
+   (see demos/bin/FontTest)
+  * Fixed a bug in VO:OS:Display:Font wrongly initializing its attribute
+   "features" while loading a font.
+
+2003/02/01
+  * Changed font handling system. Now VO allways loads the default fonts
+    with Unicode font encoding ("iso10646-1"). Non-unicode strings
+    will be converted to unicoded string using oo2c unicode codecs and
+    then printed.
+
+  * VO:Text now internally uses STRING for storing text. Expect other
+    objects and models to follow.
+
+2003/01/26
+  * Changed behaviour and return value of VO:Base:Display.Display.GetFontList
+    to better support listing of available fonts.
+  * Added support for Xft in VO:Base:Display.Display.GetFontList.
+  * Switched from C.charPtr1d to C.string.
+
+2003/01/25
+  * Moved *Prefs.Mod to Prefs sub directory.
+
+2003/01/23
+  * Added hack to VO:Label and VO:Panel to automatically
+    align labels that are in the same panel.
+
+2003/01/22
+  * Added global color map as parameter to every opened window.
+  * Added Min/Max values to VO:Scale.
+  * Reactivated "good looking mode" in VO:Scale :-)
+  * Added first version of a standard about dialog (VO:Dlg:About).
+
+2003/01/21
+  * Made some more classes abstract.
+  * Made some more attributes in VO:Object private.
+  * Implemented new Model VO:Model:Selection and derived classes and
+    integrated them into VO enviroment (exspecially VO:TableView).
+
+2003/01/19
+  * Fixed bug in VO:Model:Table:LTableModel.GetEntry crashing when
+    calling with illegal index.
+  * Added default implementation for VO:Model:Table.ListEntryBase.IsGreater
+  * Add methods On, Off and IsOn to VO:Base:Object:Model to unconditionaly
+    switch communication on and off between a model and its viewers.
+
+2003/01/12
+  * Reimplemented VO:Object.Object.GetPosObject in VO:Window using
+    VO:Object.Visitor.
+
+2003/01/07
+  * Fix some bugs in VO:Model:Value and VO:String.
+  * Added VO:Dlg:Form and VO:Model:View.
+  * Added demos/FormDemo1.
+
+2003/01/05
+  * Rewrote VisualPrefs dialog.
+    * Dropped FrameGroups in most places
+    * Made use of VO:ViewOneOfN.
+  * Added the various size preferences - but this needs a major
+    review for more consistence and better naming.
+
+2003/01/02
+  * Renamed OneOfN to ViewOneOfN (because we will have
+    a ChooseOnOfN in the future, too).
+
+2002/12/29
+  * Added OneOfN - a gadget to encapsulate visualisation of
+    one out of N views depending of the number of views
+    and general space requirements. It currently uses one out of
+    the following visualisations:
+    * VO:Tab
+    * VO:Combo together with VO:Multi
+    * VO:Table together with VO:Multi
+
+2002/12/28
+  * Added various variants of background for VO:Button to prefs.
+
+2002/12/27
+  * Added quickHelp attribute for all objects to VGD.
+
+--- new release 021226
+
+2002/12/26
+  * Removed some methods from Directory.Mod and Directory.c. Calls
+    of these functions are replacedwith calls to functions from
+    the oo2c standard library.
+  * Added file dialog to VGDView.
+  * Fixed installation.
+
+--- new release 021223
+
+2002/12/23
+  * Added tool VGDView.
+
+2002/12/19
+  * VO:Base:Display.TimeOut is gone. Long live VO:Base:Display.Timer.
+    See demos/Apple for example usage...
+  * Added configurable timer to refreshing code. Using this timer
+    refreshing event are collected until the timer runs out and then
+    the destroyed parts are refreshed.
+    On slow machines this reduces refreshes and may make the GUI
+    more responsive and makes it use less CPU power.
+
+2002/12/18
+  * Fixed preferences handling in VO:State and dependend classes.
+    VisualPrefs.Apply should now work again for assigning new images.
+  * Improved look of VO:Clock.
+  * Fixed wrong calculation of minWidth in VO:Combo.
+  * Fixed bug in VO:DigiClock, drawing over the right end of the
+    control.
+  * Added VO:Dlg:Input. However, beware! The interface will change!
+  * Make VO:PieChart look more 3D.
+  * Added VO:PercentBar with the same interface as VO:PieChart. We
+    should make a model for them...
+
+2002/12/17
+  * Fixed mouse movement handling bugs in VO:Knob and VO:Slider.
+  * Fixed bugs in the ContextHelp lowlevel routines making ContextHelp
+    windows not poping up.
+  * Fixed bug in VO:BoolPrefs setting the image for VO:Radio instead
+    of VO:Bool.
+  * Fixed bug in VO:Base:DisplayPrefs, where the wrong dfont size was
+    store, resulting in fotns getting larger each time the preferences
+    were saved.
+  * When no preferences are found, a default is automatically created.
+  * Some initialisation order while laoding prefs has changed. Exspecially
+    preferences are first initialized and then loaded (and overwritten).
+  * A DrawInfo does not not automatically Push a font on stack. You must
+    explicitely push a font know before you print out a string to the
+    display.
+
+2002/12/16
+  * Make the initial font default even less restrictive by using less
+    different font sizes and by removing the encoding.
+  * When saving preferences, the necessary "~/.VisalOberon" directory
+    is automatically created.
+  * Fixed drawing code of VO:Tab.
+  * Added focus chaining to VGD:Window.
+  * Renamed VO:Base:Display.Window.Maped, Unmaped, Hidden, Left, etc.. to
+    OnXXX.
+  * VO:Base:Display.Window.OnEntered.
+  * VO:Dlg.File and VO:Combo now initialy show the current entry when
+    opening.
+
+2002/12/07
+  * Fixed and documented return code of the VO:Object:Visitor.Visit and
+    VO:Object.Object.VisitChildren
+  * Made height of VO:Combo smaller by default.
+  * Improved VO:Grid.VisitChildren
+  * Removed obsolete controls VO:List and VO:Cycle together with their *Prefs
+    modules. Removed also VO:Model:List.
+  * Bugfix in VO:Table: Fill table area with background color, if no
+    model is assigned.
+  * Fix crashes if no table model is assigned.
+
+2002/12/04
+  * Added more functionality to VGD. Exchanged some of the examples with
+    similar VGD version.
+  * Fixed a bug in VO:Model:Value.Delete, deleting one character to much.
+  * Added more setter methods to VO:WindowGroup for VGD.
+
+2002/12/01
+  * Added GetObjectByName TO VO:Object.Object.
+  * Added missing initialisation for VO:Base:Object.MsgObject.name.
+  * Added first version VDG.
+
+2002/11/31
+  * Fix a bug in VO:Model:TextView. The number of lines was not reseted to 0
+    when Clear() was called.
+  * Removed special home made code for "select". Now we are using the IO:Select
+    implementation from the OOC-XML library.
+  * Removed VO:Interface, VO:Procedure and VOLLFor.
+  * Fixed a bug in VO:OS:Display, make program crash if select returned -1.
+    A return value was missing.
+  * Made thre functions AllocateColor8, AllocateColor16 and
+    AllocateColor32 out of AllocateColor.
+  * All color allocation now have the new color as VAR paramneter instead
+    as a return value. This way we can define VO:Base:Display.Color as a
+    RECORD without breaking code.
+  * Export VO:Window.Window.top readonly.
+
+2002/11/30
+  * Added parameter visibleOnly to VO:ObjectObject.VisitChildren and
+    derived classes.
+  * Added VO:Base:Object.MsgObject.name and VO:Base:Object.MsgObject.SetName().
+  * Fixed the various name clatches as a result of above changes.
+
+--- new release 021129
+
+2002/11/29
+  * Change the LTableModel class.
+  * Added sorting to this model.
+  * Started to visualize the sorting column in VO:Header.
+
+2002/11/29
+  * Fixes to VO:Lightchain.Mod.
+
+2002/11/02
+  * Modified shortcut handling. Shortcuts are now evaluated *after* the
+    object with the keyboard focus got the key event.
+  * Added method Hashandler to VO:Base:Object.MsgObject. This might be
+    usefull for the above change. Now you can find out if someone is
+    interested in some (key) events (like "return" or "escape")
+    before you catch them.
+
+2002/11/01
+  * Fixed some bugs in the menu code.
+
+2002/10/31
+  * Added preferences for VO:Tree.
+  * Made some more backgrounds for various objects configurable.
+  * Fixed a bug in VO:Header. *Never* Change the value of a model while
+    you are currently clipping - especially clipping to your the region
+    of your own control.
+  * Added minute and hour ticks to VO:Clock.
+  * Fixed a bug in VO:Tab, catching unwanted mosue events.
+
+2002/10/25
+  * Added VO:Object.Backgrounds for the fill area of VO:Slider and
+    VO:FuelGauge. The backgrounds are configurable.
+
+2002/10/24
+  * Removed VO:Base:Background.CalcSize. VO:Image.CalcSize will be
+    implicitly called by derived classes when setting the filename.
+  * Removed VO:Object.Background.source. The "relative" object will now be
+    handed explicitly in the VO:Object.Background.Draw() method.
+
+2002/10/20
+  * Implemented VO:Object.Visitor and VO:Object.VisitChildren.
+    This allows you to iterate over the children of a layout
+    object wihtout knowing it internal structure. As a consequence
+    a number of methods from VO:Object.Group now moved to
+    VO:Object.Layout, a number of layout object now inherit directly
+    from VO:Object:Layout and a number of methods overwrite could
+    be removed.
+    Using this method other features like storing and printing of
+    the object tree could be implemented, too.
+
+2002/10/07
+  * Fixed bug in initialisation of VO:Base:Adjustment.
+  * Added range check to VO:Model:Table.SetSelection.
+
+2002/10/04
+  * Fixed another bug in focus handling routine
+  * Fixed bug in VO:OS:Display.Window.Close, making close
+    callable more than once.
+  * Improved VO:Combo drawing code.
+
+2002/08/27
+  * Implemented is VO:Base:Display.IsTrippleClicked.
+
+2002/08/26
+  * Moved IsDoubleClicked from VO:Base:Display.Display to
+    VO:Base.Display.Window and improved validation of doubleclick event.
+  * Fixed bug in VO:Slider, incorrectly assigning Up/Down & Left/Right keys.
+
+2002/08/25
+  * Fixed KeyHandling for some controls. Shift-tab did not work correctly.
+
+2002/07/23
+  * Enhancing VO:Multi.
+  * Clean up and added functionality to VO:Dlg:File.
+
+2002/06/04
+  * Fixed problems with getting and freeing selections.
+  * VO now unmapes the window then hides all controls and then
+    destroys the OS window.
+
+2002/04/14
+  * Wrote new methods Push/PopBitmap for VO:Base:Display.DrawInfo, allows
+    fills based on a bitmaps.
+  * Created new VO:Base:Background type based on these methods.
+  * Removed all object and object prefs background handling to be based
+    on Background color, eliminating VO:Object.SetBackground and
+    company. All background handling is now always bases on
+    BackgroundObjects.
+  * Changed interface of BackgroundObject prefs persistance.
+  * Rewrote all object to use VO:Object.DrawBackground when possible, making
+    visualisation again more flexible.
+  * Enhanced button to support different backgrounds for different
+    (shortcut) modi.
+  * Added prefs modules for PieChart and PatternLegend.
+
+--- new release 020310
+
+2002/02/24
+  * Improved visualisation in VO:Load a bit.
+  * Added CreateHPanel and CreateVPanel to VO:Panel (for convinience).
+  * Fixed layouting bug in VO:PatternLegend.
+
+2002/02/20
+  * Fixed a number of initialisation errors.
+
+2002/02/17
+  * Added VO:Dlg:Input (note that behaviour might slightly change in future).
+
+2002/02/16
+  * Renamed VO:Model:File in VO:Model:DirTable.
+  * Added more functionality to Directory.Mod.
+  * Added new method recatchedFocus to VO:Object.
+  * Made VO:String select whiole string on focus in.
+
+2002/01/26
+  * Fixed bug in VO:Model:Table. ClearSelection didi not clealy refresh
+    line.
+
+  * Changed behaviour of VO:TableView. If model notified without
+    message object, visible area is restored to top of list.
+
+  * VO:Model:File: Merged columns for taype and size into one column.
+
+  * Enhanced VO:Model:Table:LTableModel. Now you can insert derived ListEntries.
+
+2002/01/23
+  * Added first version in VO:Model:Table and VO:TableView for cell alignment.
+    VO:Model:File make use of it.
+
+--- new release 020122
+
+2002/01/21
+  * Added modules VO:Dlg:File, VO:Model:File, Directory.Mod and
+    Directory.c for visualizing directory (so called file dialog or
+    file requester). Directory.c uses some libc directory functions
+    and thus may not compile on every system. Because of this it is not
+    yes part of the library.
+
+2002/01/19
+  * Some fixes to VO:String. Disabled state was not always checked.
+    Grid in disabled mode was not always correctly redrawn.
+
+  * Added readOnly flag to VO:String. If set, gadget is drawn as normal
+    but value cannot be manipulated.
+
+  * Changed some key handling in VO:TableView.
+
+  * Added GetString to VO:Model:Value.ValueModel.
+
+2002/01/15
+  * Optimized pushing and poping of fore-, background color and
+    font. If attribute is already set to the requested value,
+    OS will not be done. This visibly speeds up drawing.
+
+2002/01/14
+  * Removed the need for special font ids. All font operations
+    directly work on VO:Base:Display.Font. Expecially definitions
+    like VO:Base:Display.normalFont are not a nummeric constant
+    but directly point to an instance of VO:Base:Display.Font.
+    All emthods that work with font ids have been removed.
+
+2002/01/13
+  * Rewrote Display, Window and KeyEvent to use (a simple version)
+    of the X11 input mechanism. GetText() and GetKey() disapeared
+    and are exchanged by simple attributes.
+
+  * Fixed a bug in VO:String, crashing when getting keyeventswithout a
+    model assigned.
+
+  * Fixed focus handling. When an object handles a mouse event it only
+    gets the keyboard focus if it CanFocus().
+
+  * VO:View removes VO:Object:canFocus from the scroller, so they do not
+    catch keyboad focus (perhaps we should make this globaly configurable?).
+
+2002/01/06
+  * Fixed pattern for manupulating fontnames for font styles handling.
+    VisualOberon should now be able to load more fonts.
+
+2001/12/09
+  * Fixed bug in focus chain handling. When the window opened a wrong
+    gadegt was selected asinitial focus object.
+
+  * Added new getter and CanXXX methods to VO:Model:Value to make it more
+    useable.

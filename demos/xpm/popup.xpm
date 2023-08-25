@@ -1,0 +1,26 @@
+/* XPM */
+static char * popup_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"15 18 2 1",
+/* colors */
+" 	s none c none",
+".	s black 	m black	c black",
+/* pixels */
+"               ",
+"               ",
+"      ...      ",
+"      ...      ",
+"      ...      ",
+"      ...      ",
+"      ...      ",
+"      ...      ",
+"   .........   ",
+"    .......    ",
+"     .....     ",
+"      ...      ",
+"       .       ",
+"               ",
+"  ...........  ",
+"  ...........  ",
+"  ...........  ",
+"               "};

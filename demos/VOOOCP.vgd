@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+
+<VOOOCP>
+  <Window name="Main" title="VOOOCP">
+    <WindowGroup hFlex="TRUE">
+      <Main>
+        <Tab name="MainTab" focus="TRUE">
+          <TextRider text="Options">
+            <Label>
+              <TextEntry text="Verbose">
+                <Bool focus="TRUE"/>
+              </TextEntry>
+              <TextEntry text="Optimize">
+                <Bool focus="TRUE"/>
+              </TextEntry>
+              <TextEntry text="Error msgs.">
+                <String focus="TRUE"/>
+              </TextEntry>
+              <TextEntry text="C compiler">
+                <String focus="TRUE"/>
+              </TextEntry>
+              <TextEntry text="C compiler flags">
+                <String focus="TRUE"/>
+              </TextEntry>
+              <TextEntry text="coptflags">
+                <String focus="TRUE"/>
+              </TextEntry>
+              <TextEntry text="Linker flags">
+                <String focus="TRUE"/>
+              </TextEntry>
+              <TextEntry text="GC flags">
+                <String focus="TRUE"/>
+              </TextEntry>
+            </Label>
+          </TextRider>
+
+          <TextRider text="Pragmas">
+            <Label>
+              <TextEntry text="Warnings">
+                <Bool focus="TRUE"/>
+              </TextEntry>
+              <TextEntry text="Assertions">
+                <Bool focus="TRUE"/>
+              </TextEntry>
+              <TextEntry text="Initialize">
+                <Bool focus="TRUE"/>
+              </TextEntry>
+              <TextEntry text="Stack check">
+                <Bool focus="TRUE"/>
+              </TextEntry>
+              <TextEntry text="Comformant mode">
+                <Bool focus="TRUE"/>
+              </TextEntry>
+              <TextEntry text="Case select check">
+                <Bool focus="TRUE"/>
+              </TextEntry>
+              <TextEntry text="Index check">
+                <Bool focus="TRUE"/>
+              </TextEntry>
+              <TextEntry text="Range check">
+                <Bool focus="TRUE"/>
+              </TextEntry>
+              <TextEntry text="Deref check">
+                <Bool focus="TRUE"/>
+              </TextEntry>
+              <TextEntry text="Function result">
+                <Bool focus="TRUE"/>
+              </TextEntry>
+              <TextEntry text="Type guard">
+                <Bool focus="TRUE"/>
+              </TextEntry>
+              <TextEntry text="Int div check">
+                <Bool focus="TRUE"/>
+              </TextEntry>
+              <TextEntry text="Real div check">
+                <Bool focus="TRUE"/>
+              </TextEntry>
+            </Label>
+          </TextRider>
+
+          <TextRider text="Paths">
+            <Tab name="PathTab" hFlex="TRUE" vFlex="TRUE" focus="TRUE">
+              <TextRider text="Modules">
+                <Panel hFlex="TRUE" vFlex="TRUE" direction="horizontal">
+                  <Table hFlex="TRUE" vFlex="TRUE" focus="TRUE"/>
+
+                  <Space direction="horizontal" />
+
+                  <Panel vFlex="TRUE" direction="vertical">
+                    <Button hFlex="TRUE" labelText="_Up" focus="TRUE"/>
+                    <Button hFlex="TRUE" labelText="_Down" focus="TRUE"/>
+                    <Button hFlex="TRUE" labelText="_Add" focus="TRUE"/>
+                    <Button hFlex="TRUE" labelText="_Remove" focus="TRUE"/>
+                  </Panel>
+                </Panel>
+              </TextRider>
+
+              <TextRider text="Symbols">
+                <Panel hFlex="TRUE" vFlex="TRUE" direction="horizontal">
+                  <Table hFlex="TRUE" vFlex="TRUE" focus="TRUE"/>
+
+                  <Space direction="horizontal" />
+
+                  <Panel vFlex="TRUE" direction="vertical">
+                    <Button hFlex="TRUE" labelText="_Up" focus="TRUE"/>
+                    <Button hFlex="TRUE" labelText="_Down" focus="TRUE"/>
+                    <Button hFlex="TRUE" labelText="_Add" focus="TRUE"/>
+                    <Button hFlex="TRUE" labelText="_Remove" focus="TRUE"/>
+                  </Panel>
+                </Panel>
+              </TextRider>
+
+              <TextRider text="C tmps">
+                <Panel hFlex="TRUE" vFlex="TRUE" direction="horizontal">
+                  <Table hFlex="TRUE" vFlex="TRUE" focus="TRUE"/>
+
+                  <Space direction="horizontal" />
+
+                  <Panel vFlex="TRUE" direction="vertical">
+                    <Button hFlex="TRUE" labelText="_Up" focus="TRUE"/>
+                    <Button hFlex="TRUE" labelText="_Down" focus="TRUE"/>
+                    <Button hFlex="TRUE" labelText="_Add" focus="TRUE"/>
+                    <Button hFlex="TRUE" labelText="_Remove" focus="TRUE"/>
+                  </Panel>
+                </Panel>
+              </TextRider>
+
+              <TextRider text="Objects">
+                <Panel hFlex="TRUE" vFlex="TRUE" direction="horizontal">
+                  <Table hFlex="TRUE" vFlex="TRUE" focus="TRUE"/>
+
+                  <Space direction="horizontal" />
+
+                  <Panel vFlex="TRUE" direction="vertical">
+                    <Button hFlex="TRUE" labelText="_Up" focus="TRUE"/>
+                    <Button hFlex="TRUE" labelText="_Down" focus="TRUE"/>
+                    <Button hFlex="TRUE" labelText="_Add" focus="TRUE"/>
+                    <Button hFlex="TRUE" labelText="_Remove" focus="TRUE"/>
+                  </Panel>
+                </Panel>
+              </TextRider>
+
+            </Tab>
+          </TextRider>
+
+          <TextRider text="About">
+            <Text text="\ec\es\e9VOOOCP\ep\n\en\ec(functionless demo for \esVisualOberon\en)\n\nCopyright 1997,2002\nTim Teulings\n(rael@edge.ping.de)" />
+          </TextRider>
+        </Tab>
+      </Main>
+    </WindowGroup>
+  </Window>
+</VOOOCP>

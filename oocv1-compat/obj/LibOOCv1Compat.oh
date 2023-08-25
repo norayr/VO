@@ -1,0 +1,17 @@
+#ifndef _MODULE_LibOOCv1Compat_
+#define _MODULE_LibOOCv1Compat_
+
+#include <__typemap.h>
+#include <RT0.oh>
+#include <RT0.oh>
+#include <Object.oh>
+#include <Exception.oh>
+extern void OOC_LibOOCv1Compat_init(void);
+extern void OOC_LibOOCv1Compat_open(RT0__Module client);
+extern void OOC_LibOOCv1Compat_destroy(void);
+extern void OOC_LibOOCv1Compat_close(RT0__Module client);
+
+/* run-time meta data */
+#endif /* _MODULE_LibOOCv1Compat_ */
+
+/* --- */
